@@ -21,6 +21,15 @@ public enum Rarity
     Legendary
 }
 
+public enum Condition
+{
+    Worn,
+    Used,
+    Good,
+    Great,
+    Mint
+}
+
 [CreateAssetMenu(fileName = "NewItem", menuName = "Retro Vault/Item")]
 public class ItemData : ScriptableObject
 {
