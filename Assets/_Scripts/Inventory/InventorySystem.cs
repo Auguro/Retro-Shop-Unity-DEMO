@@ -7,59 +7,41 @@ public class InventorySystem : MonoBehaviour
     public static InventorySystem Instance { get; private set; }
 
     [SerializeField]
-    private Dictionary<ItemData, int> inventory = new Dictionary<ItemData, int>();
+    private List<ItemInstance> inventory = new List<ItemInstance>();
 
     void Awake()
     {
         Instance = this;
     }
 
-    public void AddItem(ItemData itemData, int quantity)
+    public void AddItem(ItemData itemData, Condition condition)
     {
-        //verify if already exists, if yes then just add the value
-        if(inventory.ContainsKey(itemData)){
-            inventory[itemData] += quantity;
-        }
-        //if not, add in the dicionary
-        else
-        {
-            inventory.Add(itemData, quantity);
-        }
+        ItemInstance newItem = new ItemInstance(itemData, condition);
+        inventory.Add(newItem);
     }
 
-    public void RemoveItem(ItemData itemData, int quantity)
+    public void RemoveItem(ItemInstance item)
     {
-        //Error handling 
-        if(!inventory.ContainsKey(itemData))
+        if(!inventory.Contains(item))
         {
-            Debug.LogWarning("RemoveItem: item does not exist in inventory -> " + itemData.itemName);
+            Debug.LogWarning("RemoveItem: item does not exist in inventory -> " + item.itemData.itemName);
             return;
         }
-        if(inventory[itemData] < quantity)
-        {
-            Debug.LogWarning("RemoveItem: quantity requested is greater than stock -> " + itemData.itemName);
-            return;
-        }
+        inventory.Remove(item);
+    }
 
-        //code
-        if(inventory[itemData] == quantity)
-        {
-            inventory.Remove(itemData);
-        }
-        else
-        {
-            inventory[itemData] -= quantity;
-        }
-        
+    public List<ItemInstance> GetAllItems()
+    {
+        return inventory;
+    }
+
+    public List<ItemInstance> GetItemsByRarity(Rarity rarity)
+    {
+        return inventory.FindAll(item => item.itemData.rarity == rarity);
     }
 
     public int GetQuantity(ItemData itemData)
     {
-        if(!inventory.ContainsKey(itemData))
-        {
-            Debug.LogWarning("GetQuantity: item does not exist in inventory -> " + itemData.itemName);
-            return -1;
-        }
-        return inventory[itemData];
+        return inventory.FindAll(item => item.itemData == itemData).Count;
     }
 }
