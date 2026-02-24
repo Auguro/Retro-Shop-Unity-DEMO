@@ -6,8 +6,7 @@ public class InventorySystem : MonoBehaviour
     //Singleton instance itself to mainting it alive everywhere anywhere
     public static InventorySystem Instance { get; private set; }
 
-    [SerializeField]
-    private List<ItemInstance> inventory = new List<ItemInstance>();
+    [SerializeField] private List<ItemInstance> inventory = new List<ItemInstance>();
 
     void Awake()
     {
