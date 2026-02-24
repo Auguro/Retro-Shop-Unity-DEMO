@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26febdd76d3b0984d8a2e50bb34107dd, type: 3}
   m_Name: Dummy_item
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Dummy_item
   category: 0
-  era: 0
+  era: 1
   rarity: 0
-  basePrice: 0
-  acquireCost: 0
+  basePrice: 20
+  acquireCost: 5
   isExclusive: 0
   exclusiveRivalID: 0
-  canBeMuseum: 0
-  reputationBonus: 0
+  canBeMuseum: 1
+  reputationBonus: 0.5
