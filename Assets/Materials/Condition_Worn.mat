@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6980145258644683330
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 7
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,8 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Debug_Hand
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Name: Condition_Worn
+  m_Shader: {fileID: -6465566751694194690, guid: f357df5ff93f86e4198ecfbbba347194,
+    type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -30,10 +18,9 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _CoverTexture
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -43,6 +30,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CoverTexture:
+        m_Texture: {fileID: 2800000, guid: 7212d63796178d24589c5a2826ce607a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -71,6 +62,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PapelTexture:
+        m_Texture: {fileID: 2800000, guid: 4e9a0f811b5b0684487d640b12c4b0d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -102,32 +97,83 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _Contrast: 18
     - _Cull: 2
     - _Cutoff: 0.5
+    - _Detail: 1.2
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _Distortion: 1.2
+    - _DistortionStrength: 0.34
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Lacunarity: 0.5
     - _Metallic: 0
+    - _NoiseDetail: 2
+    - _NoiseScale: 5
+    - _Noise_Contrast: 118.49
+    - _Noise_Detail: 6
+    - _Noise_Distortion: 9
+    - _Noise_Lacunarity: 1.873
+    - _Noise_Roughness: 0.5
+    - _Noise_Scale: -1.6
+    - _Noise_Threshold: 0.51
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Roughness: 0.567
+    - _Scale: -1.6
+    - _Scale_1: 0.9
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
+    - _Smoothness_Glow: 0
+    - _Smoothness_PBR: 0.5
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
+    - _Threshold: 0.4
+    - _VoronoiScale: 5
+    - _Voronoi_Detail: 3
+    - _Voronoi_Lacunarity: 7.371
+    - _Voronoi_Randomness: 0.08
+    - _Voronoi_Roughness: 0.4
+    - _Voronoi_Scale: 0.9
+    - _WarnIntensity: 0.67
+    - _WearIntensity: 5.1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OffSet: {r: 12.43, g: -103.16, b: 0, a: 0}
+    - _Offset: {r: 0.02, g: -0.46, b: 0, a: 0}
+    - _PapelColor: {r: 0.754717, g: 0.7369171, b: 0.7369171, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _StainColor: {r: 0.6226415, g: 0.06167675, b: 0.06167675, a: 0}
+    - _StainColor_Dark: {r: 0.5471698, g: 0.21938412, b: 0.21938412, a: 0}
+    - _StainColor_Light: {r: 0.8113208, g: 0.7263298, b: 0.66206837, a: 0}
+    - _Tiling: {r: 0.52, g: 0.01, b: 0, a: 0}
+    - _Tilling: {r: -41.8, g: 1.04, b: 0, a: 0}
+    - _Vector3: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &5787963203881686926
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
